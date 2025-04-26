@@ -11,39 +11,32 @@ export default function HomePage() {
       <HomeNav />
 
       {/* Hero Section */}
-      <section className="w-full py-12 md:py-24 lg:py-32 bg-gradient-to-b from-background to-muted">
+      <section className="w-full py-12 md:py-24 lg:py-32 bg-emerald-50 dark:bg-emerald-950">
         <div className="container px-4 md:px-6">
-          <div className="grid gap-6 lg:grid-cols-2 lg:gap-12 items-center">
-            <div className="flex flex-col justify-center space-y-4">
-              <div className="space-y-2">
-                <h1 className="text-3xl font-bold tracking-tighter sm:text-5xl xl:text-6xl/none">
-                  Digital Tasbih Counter for Your Spiritual Journey
-                </h1>
-                <p className="max-w-[600px] text-muted-foreground md:text-xl">
-                  Track your dhikr, set targets, and enhance your spiritual practice with our modern, feature-rich
-                  tasbih counter app.
-                </p>
-              </div>
-              <div className="flex flex-col gap-2 min-[400px]:flex-row">
-                <Link href="/signup">
-                  <Button size="lg" className="bg-emerald-600 hover:bg-emerald-700">
-                    Get Started
-                  </Button>
-                </Link>
-                <Link href="/login">
-                  <Button size="lg" variant="outline">
-                    Log In
-                  </Button>
-                </Link>
-              </div>
+          <div className="flex flex-col items-center justify-center space-y-4 text-center">
+            <div className="space-y-2">
+              <h2 className="text-3xl font-bold tracking-tighter text-emerald-800 dark:text-emerald-200 sm:text-4xl md:text-5xl">
+                Start Your Dhikr Journey Today
+              </h2>
+              <p className="max-w-[600px] text-emerald-800/80 dark:text-emerald-200/80 md:text-xl/relaxed">
+                Join thousands of Muslims enhancing their spiritual practice with our tasbih counter app.
+              </p>
             </div>
-            <div className="mx-auto lg:mx-0 relative">
-              <div className="relative w-full max-w-[400px] aspect-square rounded-full bg-gradient-to-tr from-emerald-500/20 to-emerald-500/5 flex items-center justify-center">
-                <div className="absolute inset-4 rounded-full bg-gradient-to-tr from-emerald-500/30 to-emerald-500/10 animate-pulse" />
-                <div className="relative w-3/4 h-3/4 rounded-full bg-background shadow-lg flex items-center justify-center">
-                  <span className="text-6xl font-bold text-emerald-600">33</span>
-                </div>
-              </div>
+            <div className="flex flex-col gap-2 min-[400px]:flex-row">
+              <Link href="/signup">
+                <Button size="lg" className="bg-emerald-600 hover:bg-emerald-700 text-white">
+                  Create Account
+                </Button>
+              </Link>
+              <Link href="/counter">
+                <Button
+                  size="lg"
+                  variant="outline"
+                  className="border-emerald-600 text-emerald-600 hover:bg-emerald-100 dark:hover:bg-emerald-900"
+                >
+                  Try Guest Mode
+                </Button>
+              </Link>
             </div>
           </div>
         </div>
@@ -264,110 +257,7 @@ export default function HomePage() {
       </section>
 
       {/* CTA Section */}
-      <section className="w-full py-12 md:py-24 lg:py-32 bg-emerald-50 dark:bg-emerald-950">
-        <div className="container px-4 md:px-6">
-          <div className="flex flex-col items-center justify-center space-y-4 text-center">
-            <div className="space-y-2">
-              <h2 className="text-3xl font-bold tracking-tighter text-emerald-800 dark:text-emerald-200 sm:text-4xl md:text-5xl">
-                Start Your Dhikr Journey Today
-              </h2>
-              <p className="max-w-[600px] text-emerald-800/80 dark:text-emerald-200/80 md:text-xl/relaxed">
-                Join thousands of Muslims enhancing their spiritual practice with our tasbih counter app.
-              </p>
-            </div>
-            <div className="flex flex-col gap-2 min-[400px]:flex-row">
-              <Link href="/signup">
-                <Button size="lg" className="bg-emerald-600 hover:bg-emerald-700 text-white">
-                  Create Account
-                </Button>
-              </Link>
-              <Link href="/counter">
-                <Button
-                  size="lg"
-                  variant="outline"
-                  className="border-emerald-600 text-emerald-600 hover:bg-emerald-100 dark:hover:bg-emerald-900"
-                >
-                  Try Guest Mode
-                </Button>
-              </Link>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Testimonials Section */}
-      <section className="w-full py-12 md:py-24 lg:py-32 bg-background">
-        <div className="container px-4 md:px-6">
-          <div className="flex flex-col items-center justify-center space-y-4 text-center">
-            <div className="space-y-2">
-              <div className="inline-block rounded-lg bg-muted px-3 py-1 text-sm">Testimonials</div>
-              <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl">What Users Say</h2>
-              <p className="max-w-[900px] text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
-                Hear from people who have enhanced their spiritual practice with our app.
-              </p>
-            </div>
-          </div>
-          <div className="mx-auto grid max-w-5xl grid-cols-1 gap-6 py-12 md:grid-cols-2 lg:grid-cols-3">
-            <Card>
-              <CardContent className="p-6">
-                <div className="flex items-center space-x-4">
-                  <span className="relative flex h-10 w-10 shrink-0 overflow-hidden rounded-full bg-muted">
-                    <span className="flex h-full w-full items-center justify-center rounded-full bg-muted">AM</span>
-                  </span>
-                  <div>
-                    <p className="text-sm font-medium">Ahmed M.</p>
-                    <p className="text-sm text-muted-foreground">Saudi Arabia</p>
-                  </div>
-                </div>
-                <div className="mt-4">
-                  <p className="text-muted-foreground">
-                    "This app has transformed my daily dhikr practice. The counter is intuitive and the statistics help
-                    me stay consistent."
-                  </p>
-                </div>
-              </CardContent>
-            </Card>
-            <Card>
-              <CardContent className="p-6">
-                <div className="flex items-center space-x-4">
-                  <span className="relative flex h-10 w-10 shrink-0 overflow-hidden rounded-full bg-muted">
-                    <span className="flex h-full w-full items-center justify-center rounded-full bg-muted">FJ</span>
-                  </span>
-                  <div>
-                    <p className="text-sm font-medium">Fatima J.</p>
-                    <p className="text-sm text-muted-foreground">United Kingdom</p>
-                  </div>
-                </div>
-                <div className="mt-4">
-                  <p className="text-muted-foreground">
-                    "I love the daily Ayah and Hadith feature. It gives me something to reflect on while doing my
-                    dhikr."
-                  </p>
-                </div>
-              </CardContent>
-            </Card>
-            <Card>
-              <CardContent className="p-6">
-                <div className="flex items-center space-x-4">
-                  <span className="relative flex h-10 w-10 shrink-0 overflow-hidden rounded-full bg-muted">
-                    <span className="flex h-full w-full items-center justify-center rounded-full bg-muted">YK</span>
-                  </span>
-                  <div>
-                    <p className="text-sm font-medium">Yusuf K.</p>
-                    <p className="text-sm text-muted-foreground">United States</p>
-                  </div>
-                </div>
-                <div className="mt-4">
-                  <p className="text-muted-foreground">
-                    "The custom dhikr feature is amazing. I can add any phrase I want and track my progress over time."
-                  </p>
-                </div>
-              </CardContent>
-            </Card>
-          </div>
-        </div>
-      </section>
-
+      
       <Footer />
     </div>
   )

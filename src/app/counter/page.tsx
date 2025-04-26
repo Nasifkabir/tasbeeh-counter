@@ -23,7 +23,6 @@ export default function CounterPage() {
   const { user, isGuest, isLoading: authLoading, enterGuestMode } = useAuth()
   const router = useRouter()
 
-  // If not authenticated and not in guest mode, enter guest mode automatically
   useEffect(() => {
     if (!authLoading && !user && !isGuest) {
       enterGuestMode()
@@ -39,7 +38,7 @@ export default function CounterPage() {
     activeDhikr,
     totalCount,
     sessions,
-    dhikrTypes,
+    dhikrTypes = [], // 👈 default empty array
     incrementCount,
     decrementCount,
     resetCount,
@@ -51,7 +50,6 @@ export default function CounterPage() {
 
   const { dailyContent, hijriDate } = useIslamicContent()
 
-  // Error handling for missing activeDhikr
   const dhikrName = activeDhikr?.name || "Dhikr"
 
   if (authLoading) {
@@ -135,14 +133,14 @@ export default function CounterPage() {
 
             <Tabs value={activeTab} onValueChange={setActiveTab} className="w-full">
               <TabsList className="grid grid-cols-4 mx-4">
-                {dhikrTypes.map((dhikr) => (
+                {dhikrTypes?.map((dhikr) => (
                   <TabsTrigger key={dhikr.id} value={dhikr.id}>
                     {dhikr.name}
                   </TabsTrigger>
                 ))}
               </TabsList>
 
-              {dhikrTypes.map((dhikr) => (
+              {dhikrTypes?.map((dhikr) => (
                 <TabsContent key={dhikr.id} value={dhikr.id} className="px-4">
                   <div className="text-center mb-2">
                     <p className="text-xl font-arabic">{dhikr.arabicText}</p>
